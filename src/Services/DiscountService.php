@@ -4,7 +4,7 @@ namespace DiscountSystem\Services;
 
 use DiscountSystem\Models\Discount;
 use DiscountSystem\Models\DiscountUsage;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
 class DiscountService
@@ -77,7 +77,7 @@ class DiscountService
     public function generateCode(string $typePrefix): string
     {
         do {
-            $code = $typePrefix . strtoupper(\Str::random(6));
+            $code = $typePrefix . strtoupper(Str::random(6));
         } while (Discount::where('code', $code)->exists());
 
         return $code;
