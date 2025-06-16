@@ -1,0 +1,29 @@
+{
+    "name": "pixellair/laravel-discount-system",
+    "description": "Laravel discount system",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmad Askari",
+            "email": "ahmadaskari8@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DiscountSystem\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DiscountSystem\\DiscountServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0"
+    }
+}
+
