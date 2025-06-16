@@ -19,13 +19,13 @@ Easily integrates into any Laravel app to provide:
 ### 1. Require via Composer
 
 ```
-composer require yourvendor/discount-system
+composer require pixellair/laravel-discount-system
 ```
 ### 2. Publish and Run Migrations
 To create the necessary tables for storing discounts and their usage:
 
-```
-php artisan vendor:publish --tag=discount-system-migrations
+```bash
+php artisan vendor:publish --tag=laravel-discount-system-migrations
 php artisan migrate
 ```
 
@@ -34,14 +34,14 @@ If you're using Laravel 8+ with package auto-discovery, no setup is needed.
 
 If not, register the service provider manually in config/app.php:
 
-```
+```php
 'providers' => [
     DiscountSystem\DiscountSystemServiceProvider::class,
 ],
 ```
 ###⚙️ Usage
 Apply a Coupon to an Order
-```
+```php
 use DiscountSystem\Services\DiscountService;
 
 $service = new DiscountService();
@@ -52,7 +52,7 @@ $discountAmount = $result['amount'];
 $discount = $result['discount'];
 ```
 Record a Usage After Applying
-````
+````php
 $service->recordUsage($discount, $userId);
 ````
 ### 🧪 Validations Performed in apply()
@@ -72,13 +72,13 @@ If any condition fails, a ValidationException is thrown with a meaningful messag
 
 🧾 Code Generation
 Generate a prefixed coupon code for any type:
-````
+````php
 $code = $discountService->generateCode('T'); // e.g., T7K92LA
 ````
 The prefix lets you categorize discounts (e.g., T for time-limited, A for amount-based).
 
 💡 Example Controller Usage
-````
+````php
 use DiscountSystem\Services\DiscountService;
 
 public function applyCoupon(Request $request)

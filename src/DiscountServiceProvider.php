@@ -10,13 +10,12 @@ class DiscountServiceProvider extends ServiceProvider
     {
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'discount');
 
-        // Optional: Load migrations directly (for auto-run)
         $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
 
         // Enable publishing of migrations
         $this->publishes([
             __DIR__.'/Database/migrations' => database_path('migrations'),
-        ], 'migrations');
+        ], 'laravel-discount-system-migrations');
     }
 
     public function register()
