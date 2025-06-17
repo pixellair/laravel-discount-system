@@ -7,4 +7,5 @@ return [
     'usage_limit' => 'Usage limit reached.',
     'already_used' => 'You have already used this coupon.',
     'not_eligible' => 'You are not eligible to use this coupon.',
+	'is_used' => 'The coupon is used.',
 ];
