@@ -15,7 +15,6 @@ return new class extends Migration{
             $table->decimal('value', 8, 2);
             $table->dateTime('start_at')->nullable();
             $table->dateTime('end_at')->nullable();
-            $table->boolean('one_time_use')->default(false);
             $table->unsignedInteger('usage_limit')->nullable();
             $table->unsignedInteger('min_order_amount')->nullable();
             $table->boolean('once_per_user')->default(false);
